@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komik Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin: 10px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e64a19;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Dili ve Edebiyatı</h1>
+    <p class="question">Hangisi daha komik?</p>
+
+    <ul class="answers">
+        <li><input type="radio" name="question1" value="1"> AKJSHDJASKFHA____LKAHDSJLKAF AASKDLA</li>
+        <li><input type="radio" name="question1" value="2"> DJKASJDAKSDAKL</li>
+        <li><input type="radio" name="question1" value="3"> asşkdlaaks</li>
+        <li><input type="radio" name="question1" value="4"> komik mi</li>
+
+    <button onclick="submitTest()">Sonuçları Göster</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        function submitTest() {
+            const question1 = document.getElementsByName("question1");
+            let resultMessage = "";
+
+            if (question1[1].checked) {
+                resultMessage = "çok güldüğün komik bi olay olduğunda yarılmaktan bu randomu atarsın öyle heheh gibi küçük tebessümlerde büyüğe gerek yoktur.";
+            } else if (question1[2].checked) {
+                resultMessage = "bana göre genelde bu atılır çoook yarılmadığın sürece küçük random iş görür ama sen gülmediğin zamanlar bile bunu atıyon herhalde..";
+            } else if (question1[3].checked) {
+                resultMessage = "sadece sana komik gelen ve tüm olayı sohbeti bitiren bi ifade....";
+            } else if (question1[0].checked) {
+                resultMessage = "gülmekten yarılıp yerlere yattığın zaman bu kullanılır arada nefesin kesilir o derece gülersin yani";
+            } else {
+                resultMessage = "Lütfen bir seçenek seç! 😅";
+            }
+
+            document.getElementById("result").innerText = resultMessage;
+        }
+    </script>
+
+</body>
+</html>
